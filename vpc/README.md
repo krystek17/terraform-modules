@@ -5,8 +5,8 @@ module "vpc" {
   source = ""
   name  = ""
   cidr = ""
-  public_subnet_cidr = [ "" ] 
-  private_subnet_cidr = [ "" ]
+  public_subnet = [ "" ] 
+  private_subnet = [ "" ]
   tags  = {}
 }
 ```
