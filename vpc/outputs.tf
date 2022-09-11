@@ -1,1 +1,0 @@
-/home/kira/DevOps/terraform/modules/vpc/outputs.tf
