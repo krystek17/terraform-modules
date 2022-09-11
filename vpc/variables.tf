@@ -1,5 +1,5 @@
 variable "name" {
-  description = "Name of the security group"
+  description = "Name of the vpc"
   type = string
   default = ""
 }
@@ -10,20 +10,20 @@ variable "tags" {
   default = {}
 }
 
-variable "vpc_id" {
-  description = "Id of the vpc where the security group is created"
+variable "cidr" {
+  description = "The CIDR block for the VPC"
   type = string
   default = ""
 }
 
-variable "ingress" {
-  description = "Opened ports"
+variable "public_subnets" {
+  description = "A list of public subnets"
   type = list(string)
   default = []
 }
 
-variable "ingress_cidr_block" {
-  description = "A list of allowed Ips"
+variable "private_subnets" {
+  description = "A list of private subnets"
   type = list(string)
   default = []
 }
