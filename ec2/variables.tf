@@ -10,12 +10,6 @@ variable "tags" {
   default = {}
 }
 
-variable "ami" {
-  description = "ID of AMI to use for the instance"
-  type        = string
-  default     = ""
-}
-
 variable "subnet_id" {
   description = "The ID of the subnet to use for this instance"
   type = string
@@ -54,6 +48,12 @@ variable "vpc_security_group_ids" {
 
 variable "availability_zone" {
   description = "AZ to start the instance in"
+  type        = string
+  default     = null
+}
+
+variable "user_data" {
+  description = ""
   type        = string
   default     = null
 }
