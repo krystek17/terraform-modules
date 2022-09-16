@@ -16,7 +16,15 @@ resource "aws_instance" "main" {
   monitoring = true
   key_name = var.key_name
   user_data = var.user_data
-  user_data_replace_on_change = true
   tags = merge({ Name = var.name }, var.tags )
 }
 
+resource "aws_eip" "main" {
+  vpc = true
+  tags = merge({ Name = "${var.name}-eip" })
+}
+
+resource "aws_eip_association" "main" {
+  instance_id = aws_instance.main.id
+  allocation_id = aws_eip.main.id
+}

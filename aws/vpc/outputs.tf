@@ -17,3 +17,7 @@ output "private_subnet" {
 output "availability_zone" {
   value = data.aws_availability_zones.available.names
 }
+
+output "eip_id" {
+  value = aws_eip.nat[*].id
+}
