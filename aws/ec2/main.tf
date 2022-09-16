@@ -1,10 +1,10 @@
 data "aws_ami" "main" {
-  owners      = var.owners
+  owners      = var.owner
   most_recent = true
 
   filter {
     name   = "name"
-    values = var.image
+    values = var.ami_name
   }
 }
 
