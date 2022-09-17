@@ -3,6 +3,23 @@
 ## Example
 
 ```terraform
+terraform {
+ required_version = ">= 0.13"
+  required_providers {
+    libvirt = {
+      source  = "dmacvicar/libvirt"
+      version = "0.6.2"
+    }
+  }
+}
+
+# instance the provider
+provider "libvirt" {
+  uri = "qemu:///system"
+}
+
+
+
 module "libvirt_vm"
   source  = "<module_path>"
   name  = "ubuntu"
